@@ -1,0 +1,41 @@
+
+<div class="container">
+  <h1>{{titulo}}</h1>
+  <form>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">nombre</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="producto.nombre" >
+    </div>
+
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">descripcion</label>
+      <input type="text" class="form-control" name="descripcion" [(ngModel)]="producto.descripcion" >
+    </div>
+    <div class="mb-3">
+      <label for="precio" class="form-label">precio</label>
+      <input type="number" class="form-control" name="precio" [(ngModel)]="producto.precio" >
+    </div>
+    <div class="mb-3">
+      <label for="marca" class="form-label">marca</label>
+      <input type="text" class="form-control" name="marca" [(ngModel)]="producto.marca" >
+    </div>
+    <div class="mb-3">
+      <label for="modelo" class="form-label">modelo</label>
+      <input type="text" class="form-control" name="modelo" [(ngModel)]="producto.modelo" >
+    </div>
+
+    <div class="mb-3">
+      <label for="categoria">Categoría:</label>
+      <select id="categoria" name="categoria"  [(ngModel)]="producto.categoriaId">
+        <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.nombre }}</option>
+      </select>
+    </div>
+
+
+    <button class="btn btn-success" role="button" (click) ="create()" *ngIf ="!producto.id else elseBlock" >Registrar</button>
+   <ng-template #elseBlock>
+     <button class="btn btn-success" role="button" (click)='update()'>Actualizar</button>
+   </ng-template>
+  </form>
+
+</div>

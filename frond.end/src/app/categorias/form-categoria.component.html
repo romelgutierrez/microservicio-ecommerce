@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>{{titulo}}</h1>
+  <form>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">categoria</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="categoria.nombre" >
+    </div>
+
+   <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!categoria.id else elseBlock" >Registrar</button>
+
+   <ng-template #elseBlock>
+     <button class="btn btn-success" role="button" (click)='update()'>Actualizar</button>
+   </ng-template>
+  </form>
+
+</div>

@@ -1,0 +1,24 @@
+server:
+  port: 8081
+springdoc:
+  api-doc:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+spring:
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/catalogo
+    username: root
+    password:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
+
+

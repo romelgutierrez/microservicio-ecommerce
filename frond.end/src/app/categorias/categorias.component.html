@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>{{titulo}}</h1>
+
+  <button class="btn btn-info" type="button" [routerLink]="['/categorias/form']">Agregar</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">nombre</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categoria of categorias">
+        <th scope="row">{{categoria.id}}</th>
+        <td>{{categoria.nombre}}</td>
+        <td>
+        <button type="button" name="button" class="btn btn-primary" [routerLink]="['/categorias/form', categoria.id]"> Editar</button>
+        </td>
+        <td>
+          <button type="button" name="button" class="btn btn-danger" (click)="delete(categoria)" > Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

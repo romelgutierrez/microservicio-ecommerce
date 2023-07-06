@@ -1,0 +1,18 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ivanBlade/BACKEND.git
+          search-paths: config-data
+          username: ivanBlade
+          password: ivan45gfg
+          default-label: main
+  security:
+    user:
+      name: root
+      password: s3cr3t

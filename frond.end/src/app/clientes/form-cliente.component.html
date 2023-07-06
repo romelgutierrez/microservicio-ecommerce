@@ -1,0 +1,53 @@
+<div class="container">
+    <h2>{{titulo}}</h2>
+    <form>
+      <div class="form-group row">
+        <label for="numeroDocumento" class="form-label">Documento</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" name="numeroDocumento" [(ngModel)] ="cliente.numeroDocumento">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="nombres" class="form-label">Nombres</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" name="nombres" [(ngModel)] ="cliente.nombres">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="apellidoPaterno" class="form-label">ApellidoPaterno</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" name="apellidoPaterno" [(ngModel)] ="cliente.apellidoPaterno">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="apellidoMaterno" class="form-label">ApellidoMaterno</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" name="apellidoMaterno" [(ngModel)] ="cliente.apellidoMaterno">
+        </div>
+      </div>
+     <div class="form-group row">
+        <label for="direccion" class="form-label">Direccion</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" name="direccion" [(ngModel)] ="cliente.direccion">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="telefono" class="form-label">Telefono</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" name="telefono" [(ngModel)] ="cliente.telefono">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="correo" class="form-label">Correo</label>
+        <div class="col-sm-6">
+           <input type="text" class="form-control" name="correo" [(ngModel)] ="cliente.correo">
+        </div>
+      </div>
+
+      <button class="btn btn-success" role="button" (click) ="create()" *ngIf ="!cliente.id else elseBlock" >Registrar</button>
+
+      <ng-template #elseBlock>
+      <button class="btn btn-success" role="button" (click) ="update()">Actualizar</button>
+      </ng-template>
+    </form>
+</div>
