@@ -7,10 +7,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ivanBlade/BACKEND.git
-          search-paths: config-data
-          username: ivanBlade
-          password: ivan45gfg
+          uri: 
+          search-paths: 
+          username: 
+          password: 
           default-label: main
   security:
     user:
